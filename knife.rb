@@ -8,6 +8,8 @@ puts "===============================\n"
 
 log_level                :info
 log_location             STDOUT
+# NOTE: This assumes you have an environment variable called CHEF_NODE_NAME on your system.
+# In order to create on Windows: set CHEF_NODE_NAME=<your_chef_username>
 node_name                "#{ENV['CHEF_NODE_NAME']}"
 client_key               "#{ENV['HOME']}/.chef/#{node_name}.pem"
 validation_client_name   "#{chef_org}-validator"
